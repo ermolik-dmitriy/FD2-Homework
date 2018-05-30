@@ -9,11 +9,23 @@
 <script>
     var str = prompt("Введите строку");
 
-    function vowels(str){
-        return str.replace(/[^уеэоаыяиюё]/g, "").length;
+    // function vowels(str){
+    //     return str.replace(/[^уеэоаыяиюё]/g, "").length;
+    // }
+
+    // console.log(vowels(str));
+
+    function vowels2(str){
+        var count = 0;
+        for(var i = 0; i < str.length; i++){
+            if(str[i].toLowerCase() == 'у' || str[i].toLowerCase() == 'е' || str[i].toLowerCase() == 'э' || str[i].toLowerCase() == 'о' || str[i].toLowerCase() == 'а' || str[i].toLowerCase() == 'ы' || str[i].toLowerCase() == 'я' || str[i].toLowerCase() == 'и' || str[i].toLowerCase() == 'ю' || str[i].toLowerCase() == 'ё'){
+                count += 1;
+            }
+        }
+        return count;
     }
 
-    console.log(vowels(str));
+    console.log(vowels2(str));
 </script>
 </body>
 </html>
