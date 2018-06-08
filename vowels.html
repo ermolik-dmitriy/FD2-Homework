@@ -7,7 +7,53 @@
 </head>
 <body>
 <script>
+    "use strict"
+
     var str = prompt("Введите строку");
+
+    function vowelsForEach(str){
+        var vowels = "уеэоаыяиюё";
+        var count = 0;
+
+        str = str.toLowerCase().split("");
+
+        str.forEach(function(value, index, arr) {
+            if (vowels.indexOf(str[index]) !== -1){
+                count++;
+            }
+        });
+
+        return count;
+    }
+
+    function vowelsFilter(str){
+        var vowels = "уеэоаыяиюё";
+
+        str = str.toLowerCase().split("");
+
+        return  str.filter(function(value, index, arr) {
+            return (vowels.indexOf(str[index]) !== -1)
+        }).length;
+    }
+
+    function vowelsReduce(str){
+        var vowels = "уеэоаыяиюё";
+        var count = 0;
+
+        str = str.toLowerCase().split("");
+
+        str.reduce(function(rez, value, index, arr) {
+            if (vowels.indexOf(str[index]) !== -1){
+                count++;
+            }
+        }, 0);
+
+        return count;
+    }
+
+    alert(vowelsForEach(str));
+    alert(vowelsFilter(str));
+    alert(vowelsReduce(str));
 
     // function vowels(str){
     //     return str.replace(/[^уеэоаыяиюё]/g, "").length;
@@ -15,17 +61,17 @@
 
     // console.log(vowels(str));
 
-    function vowels2(str){
-        var count = 0;
-        for(var i = 0; i < str.length; i++){
-            if(str[i].toLowerCase() == 'у' || str[i].toLowerCase() == 'е' || str[i].toLowerCase() == 'э' || str[i].toLowerCase() == 'о' || str[i].toLowerCase() == 'а' || str[i].toLowerCase() == 'ы' || str[i].toLowerCase() == 'я' || str[i].toLowerCase() == 'и' || str[i].toLowerCase() == 'ю' || str[i].toLowerCase() == 'ё'){
-                count += 1;
-            }
-        }
-        return count;
-    }
+    // function vowels2(str){
+    //     var count = 0;
+    //     for(var i = 0; i < str.length; i++){
+    //         if(str[i].toLowerCase() == 'у' || str[i].toLowerCase() == 'е' || str[i].toLowerCase() == 'э' || str[i].toLowerCase() == 'о' || str[i].toLowerCase() == 'а' || str[i].toLowerCase() == 'ы' || str[i].toLowerCase() == 'я' || str[i].toLowerCase() == 'и' || str[i].toLowerCase() == 'ю' || str[i].toLowerCase() == 'ё'){
+    //             count += 1;
+    //         }
+    //     }
+    //     return count;
+    // }
 
-    console.log(vowels2(str));
+    // console.log(vowels2(str));
 </script>
 </body>
 </html>

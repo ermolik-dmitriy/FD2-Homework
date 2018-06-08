@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>>mood</title>
+</head>
+<body>
+<script>
+
+    "use strict";
+
+    function randomDiap(n,m) {
+        return Math.floor(Math.random()*(m-n+1))+n;
+    }
+
+    function mood(colorsCount) {
+        var colors=[ '', 'красный', 'оранжевый', 'жёлтый', 'зелёный', 'голубой', 'синий', 'фиолетовый' ];
+        var used={};
+        var count = 1;
+
+        console.log( 'цветов: ' + colorsCount );
+        while(count <= colorsCount) {
+            var n=randomDiap(1,7);
+            var colorName=colors[n];
+            if ( colorName in used )
+                continue;
+            used[colorName]=true;
+            count++;
+            console.log(colorName);
+        }
+    }
+
+    mood(5);
+
+</script>
+</body>
+</html>
