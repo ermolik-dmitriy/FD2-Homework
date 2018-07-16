@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="js/script.js" defer></script>
+    <title>VALID_FORM</title>
+</head>
+<body>
+    <form name='form' action='http://fe.it-academy.by/TestForm.php' novalidate>
+        Разработчик: <input type='text' name='developer'><span style="color: red" id="errDeveloper"></span><br/>
+        Название сайта: <input type='text' name='sitename'><span style="color: red" id="errSitename"></span><br/>
+        URL сайта: <input type='text' name='siteurl'><span style="color: red" id="errSiteurl"></span><br/>
+        Дата запуска сайта: <input type='text' name='sitestart'><span style="color: red" id="errSitestart"></span><br/>
+        Посетителей в сутки: <input type='number' name='visitors'><span style="color: red" id="errVisitors"></span><br/>
+        E-mail для связи: <input type='text' name='email'><span style="color: red" id="errEmail"></span><br/>
+        Рубрика каталог: <select name='division'>
+            <option value = '1'>здоровье</option><br/>
+            <option value = '2'>йцуйцуйцу</option><br/>
+            <option value = '3'>домашний уют</option><br/>
+            <option value = '4'>бытовая техника</option><br/>
+        </select><span style="color: red" id="errDivision"></span><br/>
+        <label id="radio">Размещение: <input name='location' type='radio' value='1'>бесплатное
+        <input name='location' type='radio' value='2'>платное
+        <input name='location' type='radio' value='3'>VIP </label><span style="color: red" id="errLocation"></span><br/>
+        Разрешить отзывы: <input type='checkbox' name='votes'><span style="color: red" id="errCheckbox"></span><br/>
+        Описание сайта: <br/><textarea name='description'></textarea><span style="color: red" id="errDescription"></span><br/>
+        <input name='button' type='submit' value='Опубликовать: '>
+    </form>
+</body>
+</html>
