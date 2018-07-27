@@ -269,6 +269,17 @@
 
     button.onclick = function (EO) {
         var ok = true;
+        validDeveloper(ok);
+        validSitename(ok);
+        validSiteurl(ok);
+        validSitestart(ok);
+        validVisitors(ok);
+        validEmail(ok);
+        validDivision(ok);
+        validLocation(ok);
+        validCheckbox(ok);
+        validDescription(ok);
+
         ok = ok && validDeveloper(ok);
         ok = ok && validSitename(ok);
         ok = ok && validSiteurl(ok);
