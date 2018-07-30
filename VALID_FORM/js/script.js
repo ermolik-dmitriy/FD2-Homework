@@ -190,7 +190,7 @@
         var errDivision = document.getElementById('errDivision');
         var divisionValue = divisionField.value;
 
-        if (divisionValue == 2) {
+        if (divisionValue == 1) {
             ok = false;
             errDivision.innerHTML = " вы хорошо подумали?";
             if (toFocus) {

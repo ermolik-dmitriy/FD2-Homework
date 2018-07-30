@@ -92,8 +92,7 @@ window.onload = function (){
     clockSec.style.top = clockRadius - clockSecHeight + clockNumberRadius/2 + 'px';
     clockSec.style.transformOrigin = '50% 95% ';
 
-    //задаем таймер для выполнения функции
-    setInterval(goClock, 1000);
+    (goClock())();
 
     //функция для поворота стрелок и заполнения цифровых часов
     function goClock(){
@@ -127,6 +126,9 @@ window.onload = function (){
         clockDigital.style.top = clockRadius/2 + 'px';
         clockDigital.style.fontSize = sizeClock/10 + 'px';
         clockDigital.style.left = clockRadius - clockDigital.offsetWidth/2 + 'px';
+
+        //задаем таймер для выполнения функции
+        setInterval(goClock, 1000);
     }
 };
 
