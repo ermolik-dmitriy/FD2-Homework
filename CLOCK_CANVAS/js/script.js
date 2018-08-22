@@ -18,7 +18,9 @@ window.onload = function () {
     var clockCanvas = document.getElementById("clockCanvas");
     var context = clockCanvas.getContext('2d');
 
-    requestAnimationFrame(goClock);
+    goClock();
+
+    setInterval(goClock, 1000);
 
     //функция для поворота стрелок и заполнения цифровых часов
     function goClock() {
@@ -97,7 +99,5 @@ window.onload = function () {
         context.moveTo(clockRadius + (clockHourHeight - clockNumberRadius/2) * Math.cos(((hours * 30 + (minutes / 2))-90)*Math.PI/180), clockRadius + (clockHourHeight - clockNumberRadius/2) * Math.sin(((hours * 30 + (minutes / 2))-90)*Math.PI/180));
         context.lineTo(clockRadius - (clockNumberRadius/2)  * Math.cos(((hours * 30 + (minutes / 2))-90)*Math.PI/180), clockRadius - (clockNumberRadius/2)  * Math.sin(((hours * 30 + (minutes / 2))-90)*Math.PI/180));
         context.stroke();
-
-        requestAnimationFrame(goClock);
     }
 };

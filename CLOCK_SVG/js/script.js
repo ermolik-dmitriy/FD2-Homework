@@ -89,7 +89,9 @@ window.onload = function (){
     clockSec.style.position = "absolute";
     clockSec.style.transformOrigin = '50% 50% ';
 
-    requestAnimationFrame(goClock);
+    goClock();
+
+    setInterval(goClock, 1000);
 
     //функция для поворота стрелок и заполнения цифровых часов
     function goClock() {
@@ -119,8 +121,5 @@ window.onload = function (){
         //позиционируем цифровые часы;
         clockDigital.setAttribute("x",clockRadius - clockDigital.getBoundingClientRect().width/2);
         clockDigital.setAttribute("y",clockRadius/2 + clockDigital.getBoundingClientRect().height);
-
-        //задаем таймер для выполнения функции
-        requestAnimationFrame(goClock);
     }
 };
