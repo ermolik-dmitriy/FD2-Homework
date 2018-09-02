@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="js/Clock.js"></script>
+    <script type="text/javascript" src="js/ClockControllerButtons.js"></script>
+    <script type="text/javascript" src="js/ClockViewDom.js"></script>
+    <script type="text/javascript" src="js/ClockViewSvg.js"></script>
+    <script type="text/javascript" src="js/ClockViewCanvas.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <title>CLOCK_MVC</title>
+</head>
+<body style="clear: both">
+    <div style="float: left; padding: 10px;">
+        <div id="divClockCanvas1">
+            <div>
+                <input class="stop" type="button" value="стоп">
+                <input class="start" type="button" value="старт">
+                <span>Нью-Йорк(GMT-5)</span>
+            </div>
+            <canvas class="clockCanvas" width="300" height="300"></canvas>
+        </div>
+        <div id="divClockCanvas2">
+            <div>
+                <input class="stop" type="button" value="стоп">
+                <input class="start" type="button" value="старт">
+                <span>Минск(GMT+3)</span>
+            </div>
+            <canvas class="clockCanvas" width="300" height="300"></canvas>
+        </div>
+    </div>
+    <div style="float: left;  padding: 10px;">
+        <div id="divClockSvg1">
+            <div>
+                <input class="stop" type="button" value="стоп">
+                <input class="start" type="button" value="старт">
+                <span>Лондон(GMT)</span>
+            </div>
+            <svg class="clockSvg" width="300" height="300"></svg>
+        </div>
+        <div id="divClockSvg2">
+            <div>
+                <input class="stop" type="button" value="стоп">
+                <input class="start" type="button" value="старт">
+                <span>Токио(GMT+9)</span>
+            </div>
+            <svg class="clockSvg" width="300" height="300"></svg>
+        </div>
+    </div>
+    <div style="float: left;  padding: 10px;">
+        <div id="divClockDom1">
+            <div>
+                <input class="stop" type="button" value="стоп">
+                <input class="start" type="button" value="старт">
+                <span>Берлин(GMT+1)</span>
+            </div>
+            <div class="clockDom" style="width: 300px;height: 300px;"></div>
+        </div>
+        <div id="divClockDom2">
+            <div>
+                <input class="stop" type="button" value="стоп">
+                <input class="start" type="button" value="старт">
+                <span>Владивосток(GMT+10)</span>
+            </div>
+            <div class="clockDom" style="width: 300px;height: 300px;"></div>
+        </div>
+    </div>
+</body>
+</html>

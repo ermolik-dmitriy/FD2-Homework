@@ -1,6 +1,6 @@
 "use strict";
 
-function LocStorage(category) {
+function LocStorage() {
     var self = this;
 
     var urlScript="https://fe.it-academy.by/AjaxStringStorage2.php";
@@ -19,9 +19,8 @@ function LocStorage(category) {
         hash =  JSON.parse(callresult.result);
     }
 
-    self.addValue = function (key, value, category){
+    self.addValue = function (key, value){
         hash[key] = value;
-        localStorage.setItem(category, JSON.stringify(hash));
 
         updatePassword = Math.random();
         $.ajax( {
@@ -47,12 +46,11 @@ function LocStorage(category) {
         return undefined;
     };
 
-    self.deleteValue = function (key, category){
+    self.deleteValue = function (key){
         if(!(key in hash)){
             return false;
         }
         delete hash[key];
-        localStorage.setItem(category, JSON.stringify(hash));
 
         updatePassword = Math.random();
         $.ajax( {
@@ -84,7 +82,7 @@ function LocStorage(category) {
 
 var key, value, recipe, alcohol;
 
-var drinkStorage = new LocStorage("drinks");
+var drinkStorage = new LocStorage();
 
 function addDrink(){
     key = prompt("Введите название напитка");
@@ -94,7 +92,7 @@ function addDrink(){
         "алкогольный напиток" : alcohol,
         "рецепт приготовления" : recipe
     };
-    drinkStorage.addValue(key, value, "drinks");
+    drinkStorage.addValue(key, value);
 }
 
 function getDrink(){
@@ -110,7 +108,7 @@ function deleteDrink(){
     if (drinkStorage.deleteValue(key, "drinks") === false){
         alert("Такого напитка нет");
     }else{
-        drinkStorage.deleteValue(key, "drinks");
+        drinkStorage.deleteValue(key);
         alert("Напиток удалён");
     }
 }
