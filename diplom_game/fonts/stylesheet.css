@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'QuigleyWiggly';
+    src: url('QuigleyWiggly.eot');
+    src: url('QuigleyWiggly.eot?#iefix') format('embedded-opentype'),
+        url('QuigleyWiggly.woff') format('woff'),
+        url('QuigleyWiggly.ttf') format('truetype'),
+        url('QuigleyWiggly.svg#QuigleyWiggly') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

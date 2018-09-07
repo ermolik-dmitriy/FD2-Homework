@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/script.js"></script>
+    <title>diplom_game_start</title>
+</head>
+<body>
+<div class="containerGameStart">
+    <div class="header">
+        <span>Police Race</span>
+    </div>
+    <div class="divButton">
+        <label>Name:</label>
+        <input class="namePlayer" value="Player1" size="3">
+        <div style="padding-top: 50px">
+            <a class="linkButtonRecord" href="#">Records</a>
+            <a class="linkButtonStart" href="#">Play</a>
+        </div>
+    </div>
+    <EMBED SRC="audio/one.ogg" AUTOSTART="TRUE" hidden="true">
+    <script>
+        window.onload = function(){
+            var bodyGame = document.querySelector('.containerGameStart');
+            bodyGame.style.backgroundImage = 'url(img/police1.png)';
+            bodyGame.style.backgroundSize = '50%';
+            bodyGame.style.backgroundRepeat = 'no-repeat';
+            bodyGame.style.backgroundPosition = 'center';
+
+            var linkStart = document.querySelector('.linkButtonStart');
+            var linkRecord = document.querySelector('.linkButtonRecord');
+            var getName = document.querySelector('.namePlayer');
+
+            linkStart.onclick = saveName;
+            linkRecord.onclick = goRecord;
+
+            function saveName() {
+                var namePlayer = getName.value;
+                window.open('game_page.html?&'+namePlayer);
+                window.close();
+            }
+            function goRecord() {
+                window.open('records.html');
+                window.close();
+            }
+
+            var x = true;
+            function policeLight(){
+                if(x == true){
+                    bodyGame.style.backgroundImage = 'url(img/police2.png)';
+                    x = false;
+                }else {
+                    bodyGame.style.backgroundImage = 'url(img/police1.png)';
+                    x = true;
+                }
+            }
+            setInterval(policeLight, 400);
+        }
+    </script>
+</div>
+</body>
+</html>

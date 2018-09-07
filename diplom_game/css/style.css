@@ -1,0 +1,163 @@
+body{
+    background-image: url("../img/backgroundColor.png");
+    font-family: "QuigleyWiggly";
+    padding: 0;
+    margin: 0;
+}
+.light{
+    height: 100px;
+}
+.divButton .linkButtonStart {
+    color: white;
+    font-size: 100px;
+    text-decoration: none;
+    background-image: url("../img/spike.png");
+    background-size: 100% 100%;
+    padding: 20px 110px 30px 30px;
+    opacity: 0.8;
+}
+.divButton .linkButtonRecord {
+    color: white;
+    font-size: 100px;
+    text-decoration: none;
+    background-image: url("../img/spike1.png");
+    background-size: 100% 100%;
+    padding: 40px 40px 50px 110px;
+    opacity: 0.8;
+}
+.divButton .linkButtonRecord:hover {
+    opacity: 1;
+}
+.divButton .linkButtonStart:hover {
+    opacity: 1;
+}
+.divButton{
+    text-align: center;
+    padding-top: 0px;
+}
+.header {
+    text-align: center;
+    width: 100%;
+}
+.header span {
+    color: #fff43b;
+    font-size: 200px;
+    line-height: 200px;
+}
+.fieldScore,
+.fieldCanvas {
+    float: left;
+}
+.main{
+    clear: both;
+    width: 980px;
+    margin: 0 auto;
+}
+.fieldScore{
+    line-height: 50px;
+    text-align: center;
+    padding: 20px 35px 20px 35px;
+    color: #fff43b;
+    font-size: 50px;
+    background-image: url("../img/score.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.divButton label{
+    color: #fff43b;
+     font-size: 100px;
+     line-height: 100px;
+ }
+.divButton input{
+    color: #fff43b;
+    font-size: 50px;
+    border: none;
+    background-color: transparent;
+}
+.divButton{
+    padding-top:140px;
+}
+.recordsContainer.table {
+    display: table;
+}
+.recordsContainer{
+    width: 980px;
+    margin: 0 auto;
+    color: #fff43b;
+    font-size: 65px;
+    background-image: url("../img/record.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 30px;
+}
+.recordsContainer .tableRow{
+    display: table-row;
+    background-image: url("../img/recordBack.png");
+    background-size: 100% 100%;
+}
+.recordsContainer .item{
+    display: table-cell;
+    text-align: center;
+    padding: 0 20px 0 20px;
+    width: 100%;
+}
+.recordsContainer .item1{
+    display: table-cell;
+    text-align: left;
+    padding: 0 20px 0 20px;
+}
+.buttonBack {
+    text-align: center;
+}
+.buttonBack .linkButtonBack{
+    color: white;
+    font-size: 80px;
+    text-decoration: none;
+    background-image: url("../img/spike1.png");
+    background-size: 100% 100%;
+    padding: 0 20px 0 70px;
+    opacity: 0.8;
+}
+.buttonBack .linkButtonBack:hover{
+    opacity: 1;
+}
+.main .startPageMenu .gameButtonMenu{
+     color: white;
+     text-decoration: none;
+     font-size: 50px;
+     background-image: url("../img/spike1.png");
+     background-size: 100% 100%;
+     padding: 10px 20px 10px 40px;
+     opacity: 0.8;
+ }
+.main .startPageMenu .gameButtonRecords{
+    color: white;
+    text-decoration: none;
+    font-size: 38px;
+    background-image: url("../img/spike1.png");
+    background-size: 100% 100%;
+    padding: 13px 20px 19px 40px;
+    opacity: 0.8;
+}
+.main .startPageMenu .gameButtonRestart{
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+    background-image: url("../img/spike1.png");
+    background-size: 100% 100%;
+    padding: 13px 20px 19px 40px;
+    opacity: 0.8;
+}
+.main .startPageMenu .gameButtonRestart:hover{
+    opacity: 1;
+}
+.main .startPageMenu .gameButtonRecords:hover{
+    opacity: 1;
+}
+.main .startPageMenu .gameButtonMenu:hover{
+    opacity: 1;
+}
+.main .startPageMenu{
+    padding-top: 435px;
+}

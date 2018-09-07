@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <title>records</title>
+</head>
+<body>
+    <div class="recordsContainer">
+        <div class="table">
+            <div class="tableRow">
+                <div class="item1"><span>№</span></div>
+                <div class="item"><span>Name</span></div>
+                <div class="item"><span>Score</span></div>
+            </div>
+            <div class="tableRow">
+                <div class="item1"><span>1)</span></div>
+                <div class="item"><span class="name" >...</span></div>
+                <div class="item"><span class="score">...</span></div>
+            </div>
+            <div class="tableRow">
+                <div class="item1"><span>2)</span></div>
+                <div class="item"><span class="name">...</span></div>
+                <div class="item"><span class="score">...</span></div>
+            </div>
+            <div class="tableRow">
+                <div class="item1"><span>3)</span></div>
+                <div class="item"><span class="name">...</span></div>
+                <div class="item"><span class="score">...</span></div>
+            </div>
+            <div class="tableRow">
+                <div class="item1"><span>4)</span></div>
+                <div class="item"><span class="name">...</span></div>
+                <div class="item"><span class="score">...</span></div>
+            </div>
+            <div class="tableRow">
+                <div class="item1"><span>5)</span></div>
+                <div class="item"><span class="name">...</span></div>
+                <div class="item"><span class="score">...</span></div>
+            </div>
+        </div>
+        <div class="buttonBack">
+            <a class="linkButtonBack" href="#">Back</a>
+        </div>
+    </div>
+    <EMBED SRC="audio/one.ogg" AUTOSTART="TRUE" hidden="true">
+    <script>
+        function AjaxStorage() {
+            var self = this;
+            var urlScript="https://fe.it-academy.by/AjaxStringStorage2.php";
+            var stringName='ERMOLIK_DIPLOM_HASH_SCORE';
+            var hash = {};
+            $.ajax(
+                    {
+                        url : urlScript, type : 'POST', cache : false, dataType:'json',
+                        data : { f : 'READ', n : stringName },
+                        success : readReady
+                    }
+            );
+            function readReady(callresult) {
+                hash =  JSON.parse(callresult.result);
+            }
+            self.getHash = function (){
+                var resultHash = {};
+                var keys = Object.keys(hash);
+                keys.sort(function(a, b) {
+                    return hash[a] - hash[b]
+                }).reverse().forEach(function(k) {
+                    resultHash[k] = hash[k];
+                });
+                return resultHash;
+            };
+        }
+
+        var linkButtonBack = document.querySelector('.linkButtonBack');
+        linkButtonBack.onclick = buttonClick;
+
+        function buttonClick(){
+            window.open('start_page.html');
+            window.close();
+        }
+
+        var loadData = new AjaxStorage();
+        var divScore = document.getElementsByClassName('score');
+        var divName = document.getElementsByClassName('name');
+        var arrayScore = [];
+        var arrayName = [];
+        var count = 1;
+
+        function addContext(){
+            for(var namePlayer in loadData.getHash()){
+                if(count <= 5) {
+                    arrayName.push(namePlayer);
+                    arrayScore.push(loadData.getHash()[namePlayer]);
+                    count++;
+                }
+            }
+            for (var i= 0; i < divName.length;i++){
+                divName[i].innerHTML = arrayName[i];
+                divScore[i].innerHTML = arrayScore[i];
+            }
+        }
+        setTimeout(addContext,1000);
+    </script>
+</body>
+</html>
